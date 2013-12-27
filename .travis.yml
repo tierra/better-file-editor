@@ -7,6 +7,8 @@ language: php
 php:
     - "5.2"
     - "5.3"
+    - "5.4"
+    - "5.5"
 
 # Specify versions of WordPress to test against (requires 3.8+)
 # WP_VERSION is the WordPress tagged version (use "master" for SVN trunk)
@@ -27,10 +29,6 @@ before_script:
     - sed -i "s/youremptytestdbnamehere/wordpress_tests/" wp-tests-config.php
     - sed -i "s/yourusernamehere/travis/" wp-tests-config.php
     - sed -i "s/yourpasswordhere//" wp-tests-config.php
-    - svn checkout https://plugins.svn.wordpress.org/wordpress-importer/trunk tests/phpunit/data/plugins/wordpress-importer
-    - npm install -g grunt-cli
-    - npm install
-    - grunt
     - cd "/tmp/wordpress/src/wp-content/plugins/$PLUGIN_SLUG"
 
-script: grunt test
+script: phpunit
