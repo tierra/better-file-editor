@@ -3,19 +3,20 @@
 # Tell Travis CI we're using PHP
 language: php
 
+# Default WordPress version that will be used if not specified.
+env:
+    - WP_VERSION=master
+
 # Define our matrix of build configurations to test against.
 # WP_VERSION specifies the tag to use. The way these tests are configured to run
 # requires at least WordPress 3.8. Specify "master" to test against SVN trunk.
 matrix:
   include:
-    - php: "5.2"
-      env: WP_VERSION=3.8
+    - php: "5.5" # This will default to "master" version of WordPress
     - php: "5.4"
       env: WP_VERSION=3.8
-    - php: "5.3"
-      env: WP_VERSION=master
-    - php: "5.5"
-      env: WP_VERSION=master
+    - php: "5.2"
+      env: WP_VERSION=3.8
 
 # Clones WordPress and configures our testing environment.
 before_script:
