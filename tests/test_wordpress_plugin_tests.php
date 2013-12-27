@@ -21,7 +21,7 @@ class WP_Test_WordPress_Plugin_Tests extends WP_UnitTestCase {
 	 * WordPress installed is the version that we requested.
 	 */
 	function test_wp_version() {
-		
+
 		if ( !getenv( 'TRAVIS_PHP_VERSION' ) )
 			$this->markTestSkipped( 'Test skipped since Travis CI was not detected.' );
 
@@ -37,6 +37,15 @@ class WP_Test_WordPress_Plugin_Tests extends WP_UnitTestCase {
 		}
 
 		$this->assertEquals( get_bloginfo( 'version' ), $requested_version );
+
+	}
+
+	/**
+	 * Ensure that the plugin has been installed and activated.
+	 */
+	function test_plugin_activated() {
+
+		$this->assertTrue( is_plugin_active( 'better-file-editor/better-file-editor.php' ) );
 
 	}
 
