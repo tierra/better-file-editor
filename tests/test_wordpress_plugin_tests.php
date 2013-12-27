@@ -30,7 +30,7 @@ class WP_Test_WordPress_Plugin_Tests extends WP_UnitTestCase {
 		$requested_version = getenv( 'WP_VERSION' ) . '-src';
 
 		// The "master" version requires special handling.
-		if ( $requested_version == 'master' ) {
+		if ( $requested_version == 'master-src' ) {
 			$file = file_get_contents( 'https://raw.github.com/tierra/wordpress/master/src/wp-includes/version.php' );
 			preg_match( '#\$wp_version = \'([^\']+)\';#', $file, $matches );
 			$requested_version = $matches[1];
