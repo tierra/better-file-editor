@@ -1,0 +1,10 @@
+{
+  "name": "My WordPress Plugin",
+  "version": "1.0",
+  "description": "Description of my plugin goes here.",
+  "author": "",
+  "license": "GPLv2 or later",
+  "devDependencies": {
+    "grunt": "~0.4.2"
+  }
+}
