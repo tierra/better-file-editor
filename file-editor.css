@@ -1,0 +1,32 @@
+
+#template div {
+	/* Need to reset margin here from core styles since it destroys
+	   every single div contained in the editor... */
+	margin-right: 0px;
+}
+
+#template #editor, #template > div {
+	/* ... then redefine it in a much more scoped manner. */
+	margin-right: 210px;
+}
+
+#template div #newcontent {
+	width: 100%;
+}
+
+#wp-ace-editor {
+	position: relative;
+	height: 560px;
+	font-size: 12px;
+	border: 1px solid #BBB;
+	border-radius: 3px;
+}
+
+.ace_editor {
+	font-family: Consolas, Menlo, "Liberation Mono", Courier, monospace !important;
+}
+
+#wp-ace-editor-controls table td {
+	vertical-align: center;
+	padding: 5px;
+}
