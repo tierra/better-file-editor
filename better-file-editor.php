@@ -8,67 +8,46 @@ Author: Bryan Petty <bryan@ibaku.net>
 Author URI: http://profiles.wordpress.org/bpetty/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: better-file-editor
 */
 
 class BetterFileEditorPlugin {
 
-	function BetterFileEditorPlugin() {
-		add_action('admin_footer-theme-editor.php', array($this, 'admin_footer'));
-		add_action('admin_footer-plugin-editor.php', array($this, 'admin_footer'));
+	public static function setup() {
+
+		add_action( 'admin_init', array( __CLASS__, 'admin_init' ) );
+		add_action( 'admin_print_scripts-theme-editor.php', array( __CLASS__, 'admin_print_scripts' ) );
+		add_action( 'admin_print_scripts-plugin-editor.php', array( __CLASS__, 'admin_print_scripts' ) );
+
 	}
 
-	function admin_footer() {
-		?>
-		<script src="<?php echo plugins_url( 'js/require.js' , __FILE__ ); ?>"></script>
-		<script src="<?php echo plugins_url( 'js/ace/ace.js' , __FILE__ ); ?>"></script>
-		<script src="<?php echo plugins_url( 'js/ace/ext-modelist.js' , __FILE__ ); ?>"></script>
-		<script type="text/javascript" charset="utf-8">
-			jQuery(document).ready(function() {
-				/**
-				 * Detecting the HTML5 Canvas API (usually) gives us IE9+ and
-				 * of course all modern browsers. This should be adequate for
-				 * minimum requirements instead of browser sniffing.
-				 */
-				if(!!document.createElement('canvas').getContext)
-				{
-					var wpacejs = document.createElement('script');
-					wpacejs.type = 'text/javascript'; wpacejs.charset = 'utf-8';
-					wpacejs.src = '<?php echo plugins_url( "js/wp-ace.js" , __FILE__ ); ?>';
-					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wpacejs, s);
-				}
-			});
-		</script>
-		<style type="text/css">
-			#template div {
-				/* Need to reset margin here from core styles since it destroys
-				   every single div contained in the editor... */
-				margin-right: 0px;
-			}
-			#template #editor, #template > div {
-				/* ... then redefine it in a much more scoped manner. */
-				margin-right: 210px;
-			}
-			#template div #newcontent {
-				width: 100%;
-			}
-			#wp-ace-editor {
-				position: relative;
-				height: 560px;
-				font-size: 12px;
-				border: 1px solid #BBB;
-				border-radius: 3px;
-			}
-			.ace_editor {
-				font-family: Consolas, Menlo, "Liberation Mono", Courier, monospace !important;
-			}
-			#wp-ace-editor-controls table td {
-				vertical-align: center;
-				padding: 5px;
-			}
-		</style>
-		<?php
+	public static function admin_init() {
+
+		wp_register_style( 'better-file-editor', plugins_url( 'file-editor.css' , __FILE__ ) );
+
+		wp_register_script( 'better-file-editor-requirejs', plugins_url( 'js/require.js' , __FILE__ ) );
+		wp_register_script( 'better-file-editor-ace', plugins_url( 'js/ace/ace.js' , __FILE__ ), array( 'better-file-editor-requirejs' ) );
+		wp_register_script( 'better-file-editor-ace-modelist', plugins_url( 'js/ace/ext-modelist.js' , __FILE__ ), array( 'better-file-editor-ace' ) );
+
+		wp_register_script( 'better-file-editor',
+			plugins_url( 'js/wp-ace.js' , __FILE__ ),
+			array( 'better-file-editor-ace', 'better-file-editor-ace' ) );
+
+		wp_localize_script( 'better-file-editor', 'bfe_l10n', array(
+			'editor_theme_label'          => __( 'Theme:', 'better-file-editor' ),
+			'editor_theme_bright_label'   => __( 'Bright', 'better-file-editor' ),
+			'editor_theme_dark_label'     => __( 'Dark', 'better-file-editor' ),
+		) );
+
+	}
+
+	public static function admin_print_scripts() {
+
+		wp_enqueue_style( 'better-file-editor' );
+		wp_enqueue_script( 'better-file-editor' );
+
 	}
 
 }
 
-$bfe_plugin = new BetterFileEditorPlugin();
+BetterFileEditorPlugin::setup();
