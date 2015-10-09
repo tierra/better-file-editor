@@ -32,9 +32,11 @@ require(['ace/ace', 'ace/ext/modelist'], function( ace ) {
 						<option value="ace/theme/dreamweaver">Dreamweaver</option>\
 						<option value="ace/theme/eclipse">Eclipse</option>\
 						<option value="ace/theme/github">GitHub</option>\
+						<option value="ace/theme/iplastic">IPlastic</option>\
 						<option value="ace/theme/katzenmilch">KatzenMilch</option>\
 						<option value="ace/theme/kuroir">Kuroir</option>\
 						<option value="ace/theme/solarized_light">Solarized Light</option>\
+						<option value="ace/theme/sqlserver">SQL Server</option>\
 						<option value="ace/theme/textmate" selected="selected">TextMate</option>\
 						<option value="ace/theme/tomorrow">Tomorrow</option>\
 						<option value="ace/theme/xcode">XCode</option>\
@@ -93,6 +95,7 @@ require(['ace/ace', 'ace/ext/modelist'], function( ace ) {
 			modelist = require( 'ace/ext/modelist' ),
 			textarea = document.getElementById( 'newcontent' );
 
+		editor.$blockScrolling++;
 		editor.setAnimatedScroll( true );
 		editor.setAutoScrollEditorIntoView();
 		textarea.style.display = 'none';
@@ -134,6 +137,8 @@ require(['ace/ace', 'ace/ext/modelist'], function( ace ) {
 				localStorage.setItem( 'cursor_positions', JSON.stringify( cursor_positions ) );
 			});
 		}
+
+		editor.$blockScrolling--;
 
 		bindDropdown( 'editor_theme', function( value, id ) {
 			if ( ! value ) {

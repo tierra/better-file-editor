@@ -36,10 +36,10 @@ class BetterFileEditorPlugin {
 			array(), '2.1.20' );
 		wp_register_script( 'ace',
 			plugins_url( 'assets/js/ace/ace.js', __FILE__ ),
-			array( 'require' ), '1.1.7' );
+			array( 'require' ), '1.2.0' );
 		wp_register_script( 'ace-ext-modelist',
 			plugins_url( 'assets/js/ace/ext-modelist.js', __FILE__ ),
-			array( 'ace' ), '1.1.7' );
+			array( 'ace' ), '1.2.0' );
 		wp_register_script( 'better-file-editor',
 			plugins_url( 'assets/js/better-file-editor.js', __FILE__ ),
 			array( 'ace', 'ace-ext-modelist' ), '2.3.0' );
