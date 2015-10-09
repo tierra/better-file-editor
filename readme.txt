@@ -2,10 +2,10 @@
 Contributors: bpetty
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=bryan%40ibaku%2enet&item_name=WordPress%20Better%20File%20Editor%20Plugin
 Tags: plugin, theme, editor, code, syntax, highlighter
-Version: 2.2.0
-Requires at least: 3.6
-Tested up to: 4.0
-Stable tag: 2.2.0
+Version: 2.3.0
+Requires at least: 3.9
+Tested up to: 4.3
+Stable tag: 2.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,7 @@ Included Themes:
 * Eclipse
 * GitHub
 * idleFingers
+* IPlastic
 * KatzenMilch
 * krTheme
 * Kuroir
@@ -49,6 +50,7 @@ Included Themes:
 * Pastel on Dark
 * Solarized Dark
 * Solarized Light
+* SQL Server
 * Terminal
 * TextMate
 * Tomorrow
@@ -63,11 +65,12 @@ Included Themes:
 Supported Languages:
 
 * ABAP
+* ABC Notation
 * ADA
 * ActionScript
 * AppleScript
 * AsciiDoc
-* Assembly_x86
+* Assembly x86
 * AutoHotKey
 * BatchFile
 * C9Search
@@ -83,6 +86,8 @@ Supported Languages:
 * Dart
 * Diff
 * Dot
+* Elixir
+* Elm
 * Erlang
 * EJS
 * Forth
@@ -108,6 +113,7 @@ Supported Languages:
 * JSX
 * Julia
 * LaTeX
+* Lean
 * LESS
 * Liquid
 * Lisp
@@ -120,6 +126,8 @@ Supported Languages:
 * Makefile
 * MATLAB
 * Markdown
+* MaskJS
+* Maze
 * MySQL
 * MUSHCode
 * Nix
@@ -149,6 +157,7 @@ Supported Languages:
 * snippets
 * Soy
 * SQL
+* SQLServer
 * Stylus
 * SVG
 * Tcl
@@ -176,6 +185,15 @@ Supported Languages:
 1. Theme Editor
 
 == Changelog ==
+
+= 2.3.0 (2015-10-08) =
+
+* Updated ACE editor to 1.2.0 (2015-07-11).
+* New plugin structure with asset build system.
+* Added support for translations (none provided yet).
+* Improved autoindent for HTML and PHP.
+* New Themes: IPlastic, SQL Server
+* New Modes: Elixir, Elm, LiveScript, SQLServer
 
 = 2.2.0 (2014-10-01) =
 
