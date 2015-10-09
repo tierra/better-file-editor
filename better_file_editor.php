@@ -43,6 +43,16 @@ class BetterFileEditorPlugin {
 		wp_register_script( 'better-file-editor',
 			plugins_url( 'assets/js/better-file-editor.js', __FILE__ ),
 			array( 'ace', 'ace-ext-modelist' ), '2.3.0' );
+
+		wp_localize_script( 'better-file-editor', 'bfe', array(
+			'theme_label'        => __( 'Theme:', 'bfe' ),
+			'theme_bright_label' => __( 'Bright', 'bfe' ),
+			'theme_dark_label'   => __( 'Dark', 'bfe' ),
+			'font_size_label'    => __( 'Font Size:', 'bfe' ),
+			'show_ruler_label'   => __( 'Show Ruler', 'bfe' ),
+			'show_gutter_label'  => __( 'Show Gutter', 'bfe' ),
+			'whitespace_label'   => __( 'Visible Whitespace', 'bfe' )
+		));
 	}
 
 	function admin_print_scripts( $page ) {

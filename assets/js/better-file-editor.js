@@ -10,6 +10,7 @@
 /* global localStorage */
 /* global require */
 /* global window */
+/* global bfe */
 
 require(['ace/ace', 'ace/ext/modelist'], function( ace ) {
 	'use strict';
@@ -22,9 +23,9 @@ require(['ace/ace', 'ace/ext/modelist'], function( ace ) {
 		newcontent.after( '\
 		<div id="wp-ace-editor-controls"><table><tr>\
 			<td>\
-				<label for="editor_theme">Theme:</label>\
+				<label for="editor_theme">' + bfe.theme_label + '</label>\
 				<select id="editor_theme" size="1">\
-					<optgroup label="Bright">\
+					<optgroup label="' + bfe.theme_bright_label + '">\
 						<option value="ace/theme/chrome">Chrome</option>\
 						<option value="ace/theme/clouds">Clouds</option>\
 						<option value="ace/theme/crimson_editor">Crimson Editor</option>\
@@ -41,7 +42,7 @@ require(['ace/ace', 'ace/ext/modelist'], function( ace ) {
 						<option value="ace/theme/tomorrow">Tomorrow</option>\
 						<option value="ace/theme/xcode">XCode</option>\
 					</optgroup>\
-					<optgroup label="Dark">\
+					<optgroup label="' + bfe.theme_dark_label + '">\
 						<option value="ace/theme/ambiance">Ambiance</option>\
 						<option value="ace/theme/chaos">Chaos</option>\
 						<option value="ace/theme/clouds_midnight">Clouds Midnight</option>\
@@ -65,7 +66,7 @@ require(['ace/ace', 'ace/ext/modelist'], function( ace ) {
 				</select>\
 			</td>\
 			<td>\
-				<label for="fontsize">Font Size:</label>\
+				<label for="fontsize">' + bfe.font_size_label + '</label>\
 				<select id="fontsize" size="1">\
 					<option value="10px">10px</option>\
 					<option value="11px">11px</option>\
@@ -76,15 +77,15 @@ require(['ace/ace', 'ace/ext/modelist'], function( ace ) {
 			</td>\
 			<td>\
 				<input type="checkbox" id="show_print_margin" checked />\
-				<label for="show_print_margin">Show Ruler</label>\
+				<label for="show_print_margin">' + bfe.show_ruler_label + '</label>\
 			</td>\
 			<td>\
 				<input type="checkbox" id="show_gutter" checked />\
-				<label for="show_gutter">Show Gutter</label>\
+				<label for="show_gutter">' + bfe.show_gutter_label + '</label>\
 			</td>\
 			<td>\
 				<input type="checkbox" name="show_hidden" id="show_hidden" />\
-				<label for="show_hidden">Visible Whitespace</label>\
+				<label for="show_hidden">' + bfe.whitespace_label + '</label>\
 			</td>\
 		</tr></table></div>\
 		<div id="wp-ace-editor"></div>\

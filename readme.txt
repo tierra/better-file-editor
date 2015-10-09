@@ -190,6 +190,7 @@ Supported Languages:
 
 * Updated ACE editor to 1.2.0 (2015-07-11).
 * New plugin structure with asset build system.
+* Added support for translations (none provided yet).
 * Improved autoindent for HTML and PHP.
 * New Themes: IPlastic, SQL Server
 * New Modes: Elixir, Elm, LiveScript, SQLServer
