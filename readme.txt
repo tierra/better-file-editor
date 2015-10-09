@@ -2,10 +2,10 @@
 Contributors: bpetty
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=bryan%40ibaku%2enet&item_name=WordPress%20Better%20File%20Editor%20Plugin
 Tags: plugin, theme, editor, code, syntax, highlighter
-Version: 2.2.0
-Requires at least: 3.6
-Tested up to: 4.0
-Stable tag: 2.2.0
+Version: 2.3.0
+Requires at least: 3.9
+Tested up to: 4.3
+Stable tag: 2.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -176,6 +176,10 @@ Supported Languages:
 1. Theme Editor
 
 == Changelog ==
+
+= 2.3.0 (2015-10-08) =
+
+* New plugin structure with asset build system.
 
 = 2.2.0 (2014-10-01) =
 
