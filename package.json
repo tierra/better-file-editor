@@ -2,7 +2,7 @@
   "name": "better-file-editor",
   "title": "Better File Editor",
   "description": "Adds line numbers, syntax highlighting, code folding, and lots more to the theme and plugin editors in the admin panel.",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "homepage": "https://wordpress.org/plugins/better-file-editor/",
   "author": {
     "name": "Bryan Petty",

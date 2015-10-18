@@ -2,10 +2,10 @@
 Contributors: bpetty
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=bryan%40ibaku%2enet&item_name=WordPress%20Better%20File%20Editor%20Plugin
 Tags: plugin, theme, editor, code, syntax, highlighter
-Version: 2.3.0
+Version: 2.3.1
 Requires at least: 3.9
 Tested up to: 4.3
-Stable tag: 2.3.0
+Stable tag: 2.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -185,6 +185,12 @@ Supported Languages:
 1. Theme Editor
 
 == Changelog ==
+
+= 2.3.1 (2015-10-18) =
+
+* Use no-conflict builds of ACE editor.
+* Remove extraneous RequireJS dependency.
+* Add extra namespacing to registered scripts to avoid conflicts.
 
 = 2.3.0 (2015-10-08) =
 

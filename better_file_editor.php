@@ -3,7 +3,7 @@
  * Plugin Name: Better File Editor
  * Plugin URI:  https://wordpress.org/plugins/better-file-editor/
  * Description: Adds line numbers, syntax highlighting, code folding, and lots more to the theme and plugin editors in the admin panel.
- * Version:     2.3.0
+ * Version:     2.3.1
  * Author:      Bryan Petty <bryan@ibaku.net>
  * Author URI:  https://profiles.wordpress.org/bpetty/
  * License:     GPLv2+
@@ -39,7 +39,7 @@ class BetterFileEditorPlugin {
 			array( 'bfe-ace' ), '1.2.0' );
 		wp_register_script( 'better-file-editor',
 			plugins_url( 'assets/js/better-file-editor.js', __FILE__ ),
-			array( 'bfe-ace', 'bfe-ace-ext-modelist' ), '2.3.0' );
+			array( 'bfe-ace', 'bfe-ace-ext-modelist' ), '2.3.1' );
 
 		wp_localize_script( 'better-file-editor', 'bfe', array(
 			'theme_label'        => __( 'Theme:', 'bfe' ),
