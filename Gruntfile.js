@@ -51,8 +51,7 @@ module.exports = function( grunt ) {
 							'document',
 							'localStorage',
 							'jQuery',
-							'ace',
-							'require'
+							'ace'
 						]
 					}
 				}
@@ -105,8 +104,7 @@ module.exports = function( grunt ) {
 			scripts: {
 				files: [
 					'assets/js/ace/**/*.js',
-					'assets/js/better-file-editor.js',
-					'assets/js/require.js'
+					'assets/js/better-file-editor.js'
 				],
 				tasks: ['jshint', 'uglify'],
 				options: {
