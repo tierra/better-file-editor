@@ -8,11 +8,11 @@
 
 /* global document */
 /* global localStorage */
-/* global require */
 /* global window */
 /* global bfe */
+/* global ace */
 
-require(['ace/ace', 'ace/ext/modelist'], function( ace ) {
+( function() {
 	'use strict';
 
 	function initialize() {
@@ -93,7 +93,7 @@ require(['ace/ace', 'ace/ext/modelist'], function( ace ) {
 
 		var editor = ace.edit( 'wp-ace-editor' ),
 			filename = document.template.file.value,
-			modelist = require( 'ace/ext/modelist' ),
+			modelist = ace.require( 'ace/ext/modelist' ),
 			textarea = document.getElementById( 'newcontent' );
 
 		editor.$blockScrolling++;
@@ -225,4 +225,4 @@ require(['ace/ace', 'ace/ext/modelist'], function( ace ) {
 		}
 	});
 
-});
+})();
